@@ -1,5 +1,13 @@
 import random
 
+# Did not make it game-specific to save memory
+def getPlaces(filename):
+    places = []
+    f = open(filename, 'r')
+    for line in f:
+        places.append(line)
+    return places
+
 class Player:
     def __init__(self, name):
         self.name = name
@@ -9,7 +17,15 @@ class Game:
     def __init__(self):
         self.players = []
         self.time = 800
-        self.places = []
+        self.id = ""
+
+    def __init__(self, name):
+        self.players = []
+        self.time = 800
+        self.id = name
+
+    def setGameID(self, name):
+        self.id = name
 
     def addPlayer(self, name):
         self.players.append(Player(name))
@@ -27,8 +43,13 @@ class Game:
             excluded.append(agentID)
             self.players[agentID].type = "AGENT NO:00" + (i+1)
 
-    def setPlaces(self, filename):
-        self.places = []
+    # Did not make it game-specific to save memory
+    def getPlaces(self, filename):
+        places = []
+        f = open('workfile', 'r')
+        for line in f:
+            places.append(line)
+        return places
 
     def stop(self):
         print("stopped")

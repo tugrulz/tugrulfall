@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TUGRULFALL</title>
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body>
+    <ul>
+        {% for place in PLACES %}
+            <li>{{ place }}</li>
+        {% endfor %}
+    </ul>
+</body>
+    <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+    <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+</html>

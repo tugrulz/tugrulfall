@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <title>TUGRULFALL</title>
+
 
 </head>
 <body>
 
-    <button>NEW GAME</button>
-    <button>JOIN GAME</button>
 
+    <form method = "post"><input type="text" name="playerName" placeholder="What's your name?" value="{{request.form.username}}"></form>
+    <button id="newgame">NEW GAME</button>
+    <!--<button>Create</button>
+    <button>Back</button>-->
+    <form><input type="text" name="access" placeholder="Enter your Access Code"></form>
+    <button id="join">JOIN GAME</button>
 
     <p>Tugrulfall is a spyfall clone with new features!
     New placed replaced with old ones but the amount is not changed!
@@ -40,4 +46,7 @@
 
 
 </body>
+    <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+    <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+
 </html>
