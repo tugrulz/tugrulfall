@@ -1,4 +1,8 @@
 import random
+import string
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+    return "ahmet"
+    #return ''.join(random.choice(chars) for _ in range(size))
 
 # Did not make it game-specific to save memory
 def getPlaces(filename):
@@ -7,6 +11,9 @@ def getPlaces(filename):
     for line in f:
         places.append(line)
     return places
+
+def validityCheck():
+    return True
 
 class Player:
     def __init__(self, name):
@@ -17,7 +24,7 @@ class Game:
     def __init__(self):
         self.players = []
         self.time = 800
-        self.id = ""
+        self.id = id_generator()
 
     def __init__(self, name):
         self.players = []
@@ -26,6 +33,9 @@ class Game:
 
     def setGameID(self, name):
         self.id = name
+
+    def setRandomGameID(self):
+        self.id = id_generator()
 
     def addPlayer(self, name):
         self.players.append(Player(name))

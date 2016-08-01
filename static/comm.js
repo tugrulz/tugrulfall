@@ -4,7 +4,7 @@
 
 url = "localhost:5000"
 
-$( "#newGame" ).click(function() {
+/*$( "#newGame" ).click(function() {
   alert( "New game is establishing." );
     $.post(url,
     {
@@ -19,7 +19,7 @@ $( "#newGame" ).click(function() {
 
 $( "#newGame" ).click(function() {
   alert( "New game is establishing." );
-});
+});?/
 
 
 

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f0da2e9-7200-443e-8581-0115e736de16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/comm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jquery-3.1.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/ingame.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/places" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/lobby.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logic.py" afterPath="$PROJECT_DIR$/logic.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/comm.js" afterPath="$PROJECT_DIR$/static/comm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tugrulfall.py" afterPath="$PROJECT_DIR$/tugrulfall.py" />
     </list>
@@ -24,7 +21,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tugrulfall$tugrulfall.coverage" NAME="tugrulfall Coverage Results" MODIFIED="1469886513439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/tugrulfall$tugrulfall.coverage" NAME="tugrulfall Coverage Results" MODIFIED="1470058339314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -38,8 +35,8 @@
       <file leaf-file-name="ingame.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/ingame.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+            <state vertical-scroll-proportion="-6.875">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -48,8 +45,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64356434">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.44554454">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lobby.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/lobby.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.125">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -58,11 +65,33 @@
       <file leaf-file-name="tugrulfall.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tugrulfall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state vertical-scroll-proportion="-6.0">
+              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#0#84#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketServer.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/SocketServer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/static/comm.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -102,18 +131,8 @@
       <file leaf-file-name="jquery-3.1.0.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/jquery-3.1.0.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logic.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logic.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -140,8 +159,9 @@
         <option value="$PROJECT_DIR$/places" />
         <option value="$PROJECT_DIR$/templates/ingame.html" />
         <option value="$PROJECT_DIR$/static/comm.js" />
-        <option value="$PROJECT_DIR$/logic.py" />
+        <option value="$PROJECT_DIR$/templates/lobby.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/logic.py" />
         <option value="$PROJECT_DIR$/tugrulfall.py" />
       </list>
     </option>
@@ -182,8 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,12 +230,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tugrulfall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tugrulfall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,7 +517,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -505,10 +539,99 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/tugrulfall.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/tugrulfall.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/tugrulfall.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="30" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/ingame.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tugrulfall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Development/sketchauto/sketchautocompletion/server/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/places.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/comm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/jquery-3.1.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -522,7 +645,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -549,7 +672,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -558,7 +683,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -579,14 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Development/sketchauto/sketchautocompletion/server/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/places.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -598,43 +715,77 @@
     <entry file="file://$PROJECT_DIR$/static/comm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logic.py">
+    <entry file="file://$USER_HOME$/Development/sketchauto/sketchautocompletion/server/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/socket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ingame.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/SocketServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tugrulfall.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/lobby.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64356434">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.44554454">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding />
         </state>
       </provider>

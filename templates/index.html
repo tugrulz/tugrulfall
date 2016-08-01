@@ -9,13 +9,24 @@
 </head>
 <body>
 
+    <form method = "post" class="form-inline" > <!--action = "/newGame" -->
+        <input type="text" name="username" placeholder="What's your name?" value="{{request.form.username}}">
+        <input class="btn btn-default" id="newgame" name="newgame" type="submit" >
+    </form>
 
-    <form method = "post"><input type="text" name="playerName" placeholder="What's your name?" value="{{request.form.username}}"></form>
-    <button id="newgame">NEW GAME</button>
+
+    <form method = "post" action = "/joinGame" class="form-inline">
+        <input type="text" name="username" placeholder="What's your name?" value="{{request.form.username}}">
+        <input type="text" name="gameID" placeholder="Enter your Access Code" value="{{request.form.gameID}}">
+        <input class="btn btn-default" id="joinGame" name="JOIN GAME" type="submit" >
+
+    </form>
+
+
+    <p>{{ error }}</p>
     <!--<button>Create</button>
-    <button>Back</button>-->
-    <form><input type="text" name="access" placeholder="Enter your Access Code"></form>
-    <button id="join">JOIN GAME</button>
+    <button>Back</button>
+    <button id="join">JOIN GAME</button>-->
 
     <p>Tugrulfall is a spyfall clone with new features!
     New placed replaced with old ones but the amount is not changed!
@@ -46,7 +57,9 @@
 
 
 </body>
-    <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+    <!--<script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+    -->
     <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+
 
 </html>
