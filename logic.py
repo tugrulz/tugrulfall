@@ -18,16 +18,19 @@ def validityCheck():
 class Player:
     def __init__(self, name):
         self.name = name
-        self.type = ""
+        self.type = "CIVILIAN"
 
 class Game:
     def __init__(self):
-        self.players = []
+        self.players = {}
+        self.playerIDs = []
         self.time = 800
         self.id = id_generator()
+        self.place = ""
 
     def __init__(self, name):
-        self.players = []
+        self.players = {}
+        self.playerIDs = []
         self.time = 800
         self.id = name
 
@@ -37,21 +40,37 @@ class Game:
     def setRandomGameID(self):
         self.id = id_generator()
 
+    def setPlace(self, place):
+        self.place = place
+
+    #def addPlayer(self, name, id):
+
+
     def addPlayer(self, name):
-        self.players.append(Player(name))
+        self.players[name] = Player(name)
+        self.playerIDs.append(name)
+
+    def assignTypesBasic(self):
+        spyID = random.randrange(0, len(self.playerIDs), 1 )
+        self.players[self.playerIDs[spyID]].type = "SPY"
 
     def assignTypes(self):
-        spyID = random.randrange(0, len(self.players), 1 )
-        self.players[spyID].type = "SPY"
+        spyID = random.randrange(0, len(self.playerIDs), 1 )
+        self.players[self.playerIDs[spyID]].type = "SPY"
 
         agentNum = random.randrange(0, 3, 1)
         excluded = [spyID]
         for i in range(0, agentNum):
-            agentID = random.randrange(0, len(self.players), 1 )
+            agentID = random.randrange(0, len(self.playerIDs), 1 )
             while (agentID in excluded):
-                agentID = random.randrange(0, len(self.players), 1 )
+                agentID = random.randrange(0, len(self.playerIDs), 1 )
             excluded.append(agentID)
-            self.players[agentID].type = "AGENT NO:00" + (i+1)
+            self.players[self.playerIDs[agentID]].type = "AGENT NO:00" + (i+1)
+
+    def printGameStatus(self):
+        for key in self.players:
+            print(self.players[key].name + " is " + self.players[key].type)
+        print ("You are in " + self.place)
 
     # Did not make it game-specific to save memory
     def getPlaces(self, filename):

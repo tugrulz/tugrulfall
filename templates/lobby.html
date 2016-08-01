@@ -11,12 +11,12 @@
 
     <ul>
         {% for player in PLAYERS %}
-            <li>{{ player.name }}</li>
+            <li>{{ PLAYERS[player].name }}</li>
         {% endfor %}
     </ul>
 
     <form method = "post" class="form-inline">
-        <input class="btn btn-default" id="begingame" name="begingame" type="submit" >
+        <input class="btn btn-default" id="begingame" name="begingame" type="submit" value="Start Game">
     </form>
 
     <p>{{ error }}</p>

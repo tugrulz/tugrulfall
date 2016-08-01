@@ -9,18 +9,21 @@
 </head>
 <body>
 
+    
+
     <form method = "post" class="form-inline" > <!--action = "/newGame" -->
         <input type="text" name="username" placeholder="What's your name?" value="{{request.form.username}}">
-        <input class="btn btn-default" id="newgame" name="newgame" type="submit" >
-    </form>
-
-
-    <form method = "post" action = "/joinGame" class="form-inline">
-        <input type="text" name="username" placeholder="What's your name?" value="{{request.form.username}}">
+        <input class="btn btn-default" id="newgame" name="do" type="submit" value="New Game">
         <input type="text" name="gameID" placeholder="Enter your Access Code" value="{{request.form.gameID}}">
-        <input class="btn btn-default" id="joinGame" name="JOIN GAME" type="submit" >
-
+        <input class="btn btn-default" id="joingame" name="do" type="submit" value="Join Game" >
     </form>
+
+
+
+
+
+
+
 
 
     <p>{{ error }}</p>

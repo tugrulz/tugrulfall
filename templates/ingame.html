@@ -6,11 +6,27 @@
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
+
+    <p>
+        You are {{ GAME.players[session['username']].type}}
+    </p>
+
+    <ul>
+        {% for player in GAME.playerIDs %}
+            <li>{{ GAME.players[player].name }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>PLACES: </p>
+
     <ul>
         {% for place in PLACES %}
             <li>{{ place }}</li>
         {% endfor %}
     </ul>
+
+
+
 </body>
     <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
     <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
