@@ -8,7 +8,8 @@
 <body>
 
     <p>
-        You are {{ GAME.players[session['username']].type}}
+        Your name is {{ PLAYER }}
+        You are {{ GAME.players[PLAYER].type}}
     </p>
 
     <ul>
@@ -16,6 +17,12 @@
             <li>{{ GAME.players[player].name }}</li>
         {% endfor %}
     </ul>
+
+    <div id="players">
+        <ul>
+
+        </ul>
+    </div>
 
     <p>PLACES: </p>
 
@@ -28,6 +35,7 @@
 
 
 </body>
-    <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+
     <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+    <!--<script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>-->
 </html>

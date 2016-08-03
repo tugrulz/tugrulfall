@@ -15,6 +15,12 @@
         {% endfor %}
     </ul>
 
+    <div id="players">
+        <ul>
+
+        </ul>
+    </div>
+
     <form method = "post" class="form-inline">
         <input class="btn btn-default" id="begingame" name="begingame" type="submit" value="Start Game">
     </form>
@@ -22,9 +28,10 @@
     <p>{{ error }}</p>
 
 </body>
-    <!--<script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
-    -->
+
     <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+    <script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>
+
 
 
 </html>
