@@ -7,9 +7,36 @@
 </head>
 <body>
 
+    <div id = "timer">Timer:</div>
+
+
     <p>
-        Your name is {{ PLAYER }}
+        <!--Your name is {{ PLAYER }}-->
         You are {{ GAME.players[PLAYER].type}}
+        {% if GAME.players[PLAYER].type is equalto "SPY" %}
+
+            {% if GAME.mode is not equalto 0 %}
+
+                {% if GAME.agentCount is equalto "0" %}
+                    There is no agent! Feel free.
+                {% else %}
+                    There should be {{ GAME.agentCount }} agents tailing you.
+                {% endif %}
+
+            {% endif %}
+
+
+        {% endif %}
+
+        {% if GAME.players[PLAYER].type is equalto "CIVILIAN" %}
+
+            You are in {{ GAME.place }}.
+        {% endif %}
+
+        {% if GAME.mode is not equalto 0 %}
+            <div id="revealed agent" class > The agent is {{ GAME.firstAgent }}.</div>
+        {% endif %}
+
     </p>
 
     <ul>
@@ -18,24 +45,83 @@
         {% endfor %}
     </ul>
 
-    <div id="players">
-        <ul>
 
-        </ul>
-    </div>
 
     <p>PLACES: </p>
+    <div class="container-fluid">
+        <div class="row">
+            {% for place in PLACES %}
+                <div class="col-md-6"><li>{{ place }}</li></div>
+            {% endfor %}
+        </div>
+    </div>
 
-    <ul>
-        {% for place in PLACES %}
-            <li>{{ place }}</li>
-        {% endfor %}
-    </ul>
+
+    {% if GAME.mode is not equalto 0 %}
+        <div id = "buttons" class="hidden">
+            <form method = "post" class="form-inline">
+                <input class="btn btn-default" id="reveal" name="do" type="submit" value="Reveal Agent">
+            </form>
+
+
+            <form method = "post" class="form-inline">
+                <input class="btn btn-default" id="vote" name="do" type="submit" value="Vote Spy">
+            </form>
+        </div>
+    {% endif %}
+
+    <div id = "restartButton">
+        <form method = "post" class="form-inline">
+            <input class="btn btn-default" id="restart" name="do" type="submit" value="Restart">
+        </form>
+        <form method = "post" class="form-inline">
+            <input class="btn btn-default" id="goto" name="do" type="submit" value="Go To New Game">
+        </form>
+    </div>
+
 
 
 
 </body>
 
     <script type = "text/javascript" src="{{ url_for('static', filename='jquery-3.1.0.min.js') }}"></script>
+    <script type = "text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+
+    <script>
+
+        if (window.jQuery) {
+            console.log("JQUERY VAR");
+            // jQuery is loaded
+        } else {
+            console.log("JQUERY YOK");
+            // jQuery is not loaded
+        }
+
+        var timeRemaining = 800;
+        function timeFinish() {
+            alert("It's time to decide");
+            jQuery('#buttons').removeClass('hidden');
+
+        }
+        function update() {
+            console.log("time updated");
+            timeRemaining -= 1;
+            jQuery('#timer').html(Math.floor(timeRemaining/60) + ":" + timeRemaining%60);
+            timeManager();
+        }
+        function timeManager() {
+            if (timeRemaining > 0)
+                setTimeout(update, 1000);
+            else {
+                timeFinish();
+            }
+        }
+        $( document ).ready(function() {
+            console.log("its on");
+            timeManager();
+        });
+
+    </script>
     <!--<script type = "text/javascript" src="{{ url_for('static', filename='comm.js') }}"></script>-->
 </html>

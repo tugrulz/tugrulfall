@@ -4,8 +4,15 @@ from logic import *
 
 app = Flask(__name__)
 
-#PLACES = getPlaces("places.txt");
-PLACES = ["School", "Public Bus", "Windows"]
+import os
+cwd = os.getcwd()
+os.chdir("./PycharmProjects/tugrulfall")
+
+PLACES = getPlaces("places.txt");
+for place in PLACES:
+    print(place)
+print (PLACES)
+#PLACES = ["School", "Public Bus", "Windows"]
 games = {}
 
 def isIDValid(requestedID):
@@ -72,10 +79,52 @@ def lobby(gamename):
 
 @app.route('/game/<gamename>')
 def game(gamename):
-    return render_template("ingame.html", PLACES = PLACES, GAME = games[gamename], PLAYER = request.cookies.get('username'))
+    error = None
+    player = games[gamename].players[request.cookies.get('username')]
+    try:
+        if (request.method == "POST"):
+            actionType = request.form['do']
+            print(type(actionType))
+            if(actionType == "Reveal Agent"):
+                if(player.voted == False):
+                    player.voted = True
+                    if (player.type == "CIVILIAN"):
+                        games[gamename].revealVotes += 1
+                    else:
+                        games[gamename].noEffectVotes += 1
+            elif(actionType == "Vote Spy"):
+                if(player.voted == False):
+                    player.voted = True
+                    if (player.type == "CIVILIAN"):
+                        games[gamename].voteSpy += 1
+                    else:
+                        games[gamename].noEffectVotes += 1
+            elif(actionType == "Restart"):
+                games[gamename].assignTypesBasic()
+                games[gamename].setPlace(PLACES[random.randrange(0, len(PLACES), 1 )])
+                games[gamename].start()
+                games[gamename].printGameStatus()
+                #return redirect(url_for('game', gamename = gamename))
+                render_template("ingame.html", PLACES = PLACES, PLAYER = request.cookies.get('username'), GAME = games[gamename] )
+            elif(actionType == "Go To New Game"):
+                return  render_template("ingame.html", PLACES = PLACES, PLAYER = request.cookies.get('username'), GAME = games[gamename] )
+
+    except Exception as e:
+        flash(e)
+        return render_template("ingame.html", error = e)
+    return render_template("ingame.html", PLACES = PLACES, PLAYER = request.cookies.get('username'), GAME = games[gamename] )
+
+@app.route('/finalDecision/<gamename>')
+def finalDecision(gamename):
+    if (games[gamename].voteCheck()):
+        if (games[gamename].shouldReveal()):
+            return games[gamename].firstAgent
+        else:
+            return "Negative"
 
 @app.route('/lobby/updateLobby/<gamename>')
 def update(gamename):
+    print (json.dumps(games[gamename].playerIDs))
     return json.dumps(games[gamename].playerIDs)
 
 @app.route('/lobby/startgame/<gamename>')
@@ -86,7 +135,7 @@ def start(gamename):
         #return redirect(url_for('game', gamename = gamename))
         return render_template("ingame.html", PLACES = PLACES, GAME = games[gamename])
     else:
-        print("none")
+        print("Did not begin")
         return "Negative"
 
 
@@ -105,7 +154,7 @@ def method_not_allowed(e):
 if __name__ == '__main__':
     app.secret_key = os.urandom(24)
     app.debug
-    app.run()
+    app.run(host= '0.0.0.0')
 
 
 

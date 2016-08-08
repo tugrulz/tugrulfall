@@ -28,8 +28,16 @@ var gamename = "ahmet"; // bad programming, should be changed with the variable 
   $.ajax({
     url: "updateLobby/"+gamename,
     success: function(data) {
-        console.log("UPDATE PLAYERS")
-        jQuery.each(data, function(playername) {
+        console.log("UPDATE PLAYERS");
+        console.log(data);
+        var players = JSON.parse(data);
+        //data = $.parseJSON(data);
+        // console.log("Parsed: " + data);
+        console.log(typeof (players));
+        console.log(typeof(players[0]))
+        //players = data.substring(2,data.length - 2).split('/",/"');
+        $('#players ul').html('');
+        jQuery.each(players, function(index, playername) {
        $('#players ul').append(
         $('<li>').append(
             playername+""
@@ -38,11 +46,11 @@ var gamename = "ahmet"; // bad programming, should be changed with the variable 
 
     });
 
-    setTimeout(areNewPlayers, 2000);
+    //setTimeout(areNewPlayers, 3000);
     },
     complete: function() {
       // Schedule the next request when the current one's complete
-      setTimeout(areNewPlayers, 2000);
+      setTimeout(areNewPlayers, 3000);
     }
   });
 })();

@@ -9,7 +9,8 @@ def getPlaces(filename):
     places = []
     f = open(filename, 'r')
     for line in f:
-        places.append(line)
+        #if ((line != "") | (line != "/n")):
+        places.append(line[:-1])
     return places
 
 def validityCheck():
@@ -19,6 +20,9 @@ class Player:
     def __init__(self, name):
         self.name = name
         self.type = "CIVILIAN"
+        self.voted = False
+
+BASIC_MODE = 0
 
 class Game:
     def __init__(self):
@@ -29,6 +33,13 @@ class Game:
         self.place = ""
         self.begun = False
         self.change = False
+        self.revealVotes = 0
+        self.voteSpyVotes = 0
+        self.noEffectRevealVotes = 0
+        self.noEffectVoteSpyVotes = 0
+        self.agentCount = 0
+        self.firstAgent = "no one"
+        self.mode = BASIC_MODE
 
     def __init__(self, name):
         self.players = {}
@@ -38,6 +49,11 @@ class Game:
         self.place = ""
         self.begun = False
         self.change = False
+        self.revealVotes = 0
+        self.voteSpyVotes = 0
+        self.agentCount = 0
+        self.firstAgent = "no one"
+        self.mode = BASIC_MODE
 
     def setGameID(self, name):
         self.id = name
@@ -61,17 +77,22 @@ class Game:
         self.players[self.playerIDs[spyID]].type = "SPY"
 
     def assignTypes(self):
-        spyID = random.randrange(0, len(self.playerIDs), 1 )
-        self.players[self.playerIDs[spyID]].type = "SPY"
+        if(self.mode != BASIC_MODE):
+            spyID = random.randrange(0, len(self.playerIDs), 1 )
+            self.players[self.playerIDs[spyID]].type = "SPY"
 
-        agentNum = random.randrange(0, 3, 1)
-        excluded = [spyID]
-        for i in range(0, agentNum):
-            agentID = random.randrange(0, len(self.playerIDs), 1 )
-            while (agentID in excluded):
+            agentNum = random.randrange(0, 3, 1)
+            self.agentCount = str(agentNum)
+            excluded = [spyID]
+            for i in range(0, agentNum):
                 agentID = random.randrange(0, len(self.playerIDs), 1 )
-            excluded.append(agentID)
-            self.players[self.playerIDs[agentID]].type = "AGENT NO:00" + (i+1)
+                while (agentID in excluded):
+                    agentID = random.randrange(0, len(self.playerIDs), 1 )
+                self.firstAgent = self.playerIDs[agentID]
+                excluded.append(agentID)
+                self.players[self.playerIDs[agentID]].type = "AGENT NO:00" + (i+1)
+        else:
+            self.assignTypes()
 
     def printGameStatus(self):
         if(self.begun):
@@ -98,7 +119,14 @@ class Game:
     def stop(self):
         print("stopped")
 
+    def restart(self):
+        print("restarted")
 
+    def voteCheck(self):
+        return (len(self.playerIDs) == self.revealVotes + self.voteSpyVotes + self.noEffectVoteSpyVotes + self.noEffectRevealVotes)
+
+    def shouldReveal(self):
+        return (self.revealVotes > self.voteSpyVotes) | (self.revealVotes + self.noEffectRevealVotes > self.voteSpyVotes + self.noEffectVoteSpyVotes)
 
 
 
